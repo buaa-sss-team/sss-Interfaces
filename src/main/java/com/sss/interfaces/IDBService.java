@@ -1,8 +1,6 @@
-package com.yuyuyzl.SSS;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import com.yuyuyzl.SSS.models.*;
+package com.sss.interfaces;
+import com.sss.interfaces.model.*;
 import java.sql.*;
-import java.util.Date;
 
 public interface IDBService {
     //user

@@ -1,6 +1,6 @@
-package com.yuyuyzl.SSS;
+package com.sss.interfaces;
 
-import com.yuyuyzl.SSS.models.TestUser;
+import com.sss.interfaces.model.TestUser;
 
 import java.util.List;
 

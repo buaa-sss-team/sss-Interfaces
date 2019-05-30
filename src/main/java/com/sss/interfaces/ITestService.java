@@ -1,4 +1,4 @@
-package com.yuyuyzl.SSS;
+package com.sss.interfaces;
 
 public interface ITestService {
     public boolean login(String username, String password);

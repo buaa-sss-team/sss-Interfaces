@@ -1,4 +1,4 @@
-package com.yuyuyzl.SSS;
+package com.sss.interfaces;
 
 import java.io.Serializable;
 import java.util.List;

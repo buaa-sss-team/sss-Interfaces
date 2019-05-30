@@ -1,4 +1,4 @@
-package com.yuyuyzl.SSS.models;
+package com.sss.interfaces.model;
 import java.io.Serializable;
 //用户类
 public class user implements Serializable{
