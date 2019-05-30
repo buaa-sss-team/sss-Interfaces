@@ -1,4 +1,4 @@
-package com.yuyuyzl.SSS.models;
+package com.sss.interfaces.model;
 import java.io.Serializable;
 //专家类
 public class expert implements Serializable {

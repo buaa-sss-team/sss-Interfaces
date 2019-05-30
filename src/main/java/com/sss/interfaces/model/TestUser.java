@@ -1,4 +1,4 @@
-package com.yuyuyzl.SSS.models;
+package com.sss.interfaces.model;
 
 import javax.persistence.*;
 @Entity
