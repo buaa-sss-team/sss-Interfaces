@@ -1,23 +1,23 @@
 package com.sss.interfaces.hmodel;
 
 import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.io.Serializable;
-
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class User implements Serializable {
+public class User {
     private Integer id;
-    private String name;
+    private String account;
     private String password;
-    private String personalInformationJson;
+    private String info;
     private String boughtThings;
     private Integer credit;
+    private Integer type;
 
     @Id
     @Column(name = "id")
@@ -30,13 +30,13 @@ public class User implements Serializable {
     }
 
     @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    @Column(name = "account")
+    public String getAccount() {
+        return account;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     @Basic
@@ -50,13 +50,13 @@ public class User implements Serializable {
     }
 
     @Basic
-    @Column(name = "personalInformationJson")
-    public String getPersonalInformationJson() {
-        return personalInformationJson;
+    @Column(name = "info")
+    public String getInfo() {
+        return info;
     }
 
-    public void setPersonalInformationJson(String personalInformationJson) {
-        this.personalInformationJson = personalInformationJson;
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     @Basic
@@ -79,6 +79,16 @@ public class User implements Serializable {
         this.credit = credit;
     }
 
+    @Basic
+    @Column(name = "type")
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -87,12 +97,12 @@ public class User implements Serializable {
         User user = (User) o;
 
         if (id != null ? !id.equals(user.id) : user.id != null) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (account != null ? !account.equals(user.account) : user.account != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (personalInformationJson != null ? !personalInformationJson.equals(user.personalInformationJson) : user.personalInformationJson != null)
-            return false;
+        if (info != null ? !info.equals(user.info) : user.info != null) return false;
         if (boughtThings != null ? !boughtThings.equals(user.boughtThings) : user.boughtThings != null) return false;
         if (credit != null ? !credit.equals(user.credit) : user.credit != null) return false;
+        if (type != null ? !type.equals(user.type) : user.type != null) return false;
 
         return true;
     }
@@ -100,11 +110,12 @@ public class User implements Serializable {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (account != null ? account.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (personalInformationJson != null ? personalInformationJson.hashCode() : 0);
+        result = 31 * result + (info != null ? info.hashCode() : 0);
         result = 31 * result + (boughtThings != null ? boughtThings.hashCode() : 0);
         result = 31 * result + (credit != null ? credit.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
 }
