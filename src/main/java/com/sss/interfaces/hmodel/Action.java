@@ -7,10 +7,10 @@ import javax.persistence.Id;
 import java.sql.Timestamp;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
+import java.io.Serializable;
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class Action {
+public class Action implements Serializable{
     private Integer id;
     private Integer userid;
     private String message;

@@ -8,9 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import java.io.Serializable;
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class User {
+public class User implements Serializable{
     private Integer id;
     private String account;
     private String password;

@@ -6,9 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import java.io.Serializable;
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class Tobeexpert {
+public class Tobeexpert implements Serializable{
     private Integer id;
     private Integer userid;
     private Integer status;

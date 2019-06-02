@@ -6,9 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import java.io.Serializable;
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class Expert {
+public class Expert implements Serializable{
     private Integer id;
     private String name;
     private String orgs;
