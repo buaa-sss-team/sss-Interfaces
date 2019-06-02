@@ -1,5 +1,8 @@
 package com.sss.interfaces.hmodel;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +11,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
 public class Logs implements Serializable {
     private Timestamp time;
     private String info;

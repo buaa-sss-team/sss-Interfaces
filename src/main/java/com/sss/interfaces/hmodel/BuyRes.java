@@ -1,5 +1,8 @@
 package com.sss.interfaces.hmodel;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +10,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
 public class BuyRes implements Serializable{
     private Integer auditId;
     private Integer type;

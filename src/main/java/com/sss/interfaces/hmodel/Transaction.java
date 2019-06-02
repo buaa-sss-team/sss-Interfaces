@@ -1,5 +1,8 @@
 package com.sss.interfaces.hmodel;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +10,7 @@ import javax.persistence.Id;
 import java.sql.Time;
 
 @Entity
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
 public class Transaction {
     private Integer tradeId;
     private Integer type;
