@@ -1,11 +1,10 @@
 package com.sss.interfaces;
 
-import com.sss.interfaces.model.TestUser;
+import com.sss.interfaces.hmodel.User;
 
 import java.util.List;
 
 public interface ITestUserService {
-    TestUser getUser(int id);
-    List<TestUser> getAllUser();
-    boolean addUser(TestUser user);
+    User getUser(int id);
+    boolean addUser(User user);
 }
