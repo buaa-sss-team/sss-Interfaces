@@ -3,6 +3,8 @@ package com.sss.interfaces.service;
 import com.sss.interfaces.model.user;
 
 public interface IAuthorization {
-    int userLogin(user user);
-    int userSignIn(String account, String pwd);
+    //登陆，成功返回1，错误返回0
+    int userLogin(String name, String pwd);
+    //注册，不检查用户名重合
+    int userSignIn(String name, String pwd);
 }
