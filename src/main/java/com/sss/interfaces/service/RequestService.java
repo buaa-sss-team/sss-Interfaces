@@ -1,8 +1,11 @@
 package com.sss.interfaces.service;
 
+import com.sss.interfaces.hmodel.Buyres;
+import com.sss.interfaces.hmodel.Payment;
+import com.sss.interfaces.hmodel.Tobeexpert;
+
 public interface RequestService {
-    void reqForExpert (SettleIn settleIn);
-    void reqForWithdraw (Payment payment);
-    void buyResource (BuyRes buyRes);
-    void modifyResource(ModifySciRes modifySciRes);
+    int reqForExpert (Tobeexpert Tobeexpert);
+    int reqForWithdraw (Payment payment);
+    int buyResource (Buyres buyRes);
 }
