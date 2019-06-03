@@ -11,7 +11,8 @@ public interface IHDBdao {
 
     List<Tobeexpert> getTobeexpertBystatus(int st);
     List<Buyres> getBuyresBystatus(int st);
-
+    List<Tradeinfo> getTradeInfoByUserId(int userid);
     User getUserByName(String name);
+
 
 }
