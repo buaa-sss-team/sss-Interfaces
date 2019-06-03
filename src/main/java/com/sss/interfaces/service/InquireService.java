@@ -1,8 +1,6 @@
 package com.sss.interfaces.service;
-import com.sss.interfaces.hmodel.Expert;
-import com.sss.interfaces.hmodel.Paper;
-import com.sss.interfaces.hmodel.Patent;
-import com.sss.interfaces.hmodel.User;
+import com.sss.interfaces.hmodel.*;
+
 public interface InquireService {
     /***
      * 请注意Tobeexpert Buyres  有一个字段是message，用string表示
@@ -43,4 +41,12 @@ public interface InquireService {
      * @return 返回一个Patent的对象，如果没查到则为NULL
      */
     Patent getPatentInfo(int id);
+
+    /***
+     * 根据动态id查找数据库中对应的动态
+     * @param id 动态id
+     * @return 返回一个Action的对象，如果没查到则为NULL
+     */
+    Action getActionInfo(int id);
+
 }
