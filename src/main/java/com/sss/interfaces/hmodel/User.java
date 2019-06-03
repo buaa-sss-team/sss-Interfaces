@@ -1,17 +1,14 @@
 package com.sss.interfaces.hmodel;
 
 import org.hibernate.annotations.Cache;
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
 import java.io.Serializable;
+
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class User implements Serializable{
+public class User implements Serializable {
     private Integer id;
     private String account;
     private String password;
@@ -22,6 +19,7 @@ public class User implements Serializable{
 
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer getId() {
         return id;
     }

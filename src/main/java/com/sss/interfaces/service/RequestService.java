@@ -1,9 +1,5 @@
 package com.sss.interfaces.service;
-
-import com.sss.interfaces.hmodel.Buyres;
-import com.sss.interfaces.hmodel.Payment;
-import com.sss.interfaces.hmodel.Tobeexpert;
-
+import com.sss.interfaces.hmodel.*;
 public interface RequestService {
     int reqForExpert (Tobeexpert Tobeexpert);
     int reqForWithdraw (Payment payment);

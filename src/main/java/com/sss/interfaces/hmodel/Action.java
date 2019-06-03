@@ -1,16 +1,18 @@
 package com.sss.interfaces.hmodel;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Timestamp;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import java.io.Serializable;
+import java.sql.Timestamp;
+
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class Action implements Serializable{
+public class Action implements Serializable {
     private Integer id;
     private Integer userid;
     private String message;

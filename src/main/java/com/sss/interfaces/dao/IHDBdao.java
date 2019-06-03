@@ -1,13 +1,8 @@
 package com.sss.interfaces.dao;
 
-import com.sss.interfaces.hmodel.Buyres;
-import com.sss.interfaces.hmodel.Payment;
-import com.sss.interfaces.hmodel.Tobeexpert;
-import com.sss.interfaces.hmodel.User;
-
 import java.lang.Class;
 import java.util.List;
-
+import com.sss.interfaces.hmodel.*;
 public interface IHDBdao {
     int insert(Object obj);
     int update(Object obj);

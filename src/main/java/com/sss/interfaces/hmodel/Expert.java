@@ -1,15 +1,17 @@
 package com.sss.interfaces.hmodel;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import java.io.Serializable;
+
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-public class Expert implements Serializable{
+public class Expert implements Serializable {
     private Integer id;
     private String name;
     private String orgs;
