@@ -1,5 +1,7 @@
 package com.sss.interfaces.service;
 import com.sss.interfaces.hmodel.Expert;
+import com.sss.interfaces.hmodel.Paper;
+import com.sss.interfaces.hmodel.Patent;
 import com.sss.interfaces.hmodel.User;
 public interface InquireService {
     /***
@@ -23,9 +25,22 @@ public interface InquireService {
 
     /***
      * 根据专家id查找数据库中对应的专家
-     * @param id 专家的账号
+     * @param id 专家id
      * @return 返回一个Expert的对象，如果没查到则为NULL
      */
     Expert getExperetInfo(int id);
 
+    /***
+     * 根据专利id查找数据库中对应的专利
+     * @param id 专利的id
+     * @return 返回一个Paper的对象，如果没查到则为NULL
+     */
+    Paper getPaperInfo(int id);
+
+    /***
+     * 根据专利id查找数据库中对应的专利
+     * @param id 专利id
+     * @return 返回一个Patent的对象，如果没查到则为NULL
+     */
+    Patent getPatentInfo(int id);
 }
