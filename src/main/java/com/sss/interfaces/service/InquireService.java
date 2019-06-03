@@ -1,4 +1,5 @@
 package com.sss.interfaces.service;
+import com.sss.interfaces.hmodel.Expert;
 import com.sss.interfaces.hmodel.User;
 public interface InquireService {
     /***
@@ -12,10 +13,19 @@ public interface InquireService {
      * @return 返回一个User的对象，如果没查到则为NULL
      */
     User getUserInfo(int id);
+
     /***
      * 根据用户账号查找数据库中对应的用户
      * @param name 用户的账号
      * @return 返回一个User的对象，如果没查到则为NULL
      */
     User getUserInfo(String name);
+
+    /***
+     * 根据专家id查找数据库中对应的专家
+     * @param id 专家的账号
+     * @return 返回一个Expert的对象，如果没查到则为NULL
+     */
+    Expert getExperetInfo(int id);
+
 }
