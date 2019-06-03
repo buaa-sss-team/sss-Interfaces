@@ -4,8 +4,15 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import org.hibernate.annotations.GenerationTime;
+import java.time.*;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.GenerationTime.*;
+
+import static org.hibernate.annotations.GenerationTime.ALWAYS;
 
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_WRITE )
@@ -225,7 +232,8 @@ public class Paper implements Serializable {
     }
 
     @Basic
-    @Column(name = "create_time")
+    @org.hibernate.annotations.Generated(ALWAYS)
+    @Column(name = "create_time",columnDefinition = "timestamp default CURRENT_TIMESTAMP ON INSERT CURRENT_TIMESTAMP")
     public Timestamp getCreateTime() {
         return createTime;
     }
@@ -235,7 +243,8 @@ public class Paper implements Serializable {
     }
 
     @Basic
-    @Column(name = "update_time")
+    @org.hibernate.annotations.Generated(ALWAYS)
+    @Column(name = "update_time",updatable = true,columnDefinition = "timestamp default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     public Timestamp getUpdateTime() {
         return updateTime;
     }
