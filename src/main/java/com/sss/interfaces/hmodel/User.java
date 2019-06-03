@@ -2,6 +2,7 @@ package com.sss.interfaces.hmodel;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.mapping.UniqueKey;
 
 import javax.persistence.*;
 import java.io.Serializable;

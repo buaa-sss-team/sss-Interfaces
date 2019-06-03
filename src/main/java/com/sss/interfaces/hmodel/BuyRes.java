@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Buyres implements Serializable {
     private Integer id;
     private Integer userid;
-    private Integer staus;
+    private Integer status;
     private String message;
 
     @Id
@@ -36,13 +36,13 @@ public class Buyres implements Serializable {
     }
 
     @Basic
-    @Column(name = "staus")
-    public Integer getStaus() {
-        return staus;
+    @Column(name = "status")
+    public Integer getstatus() {
+        return status;
     }
 
-    public void setStaus(Integer staus) {
-        this.staus = staus;
+    public void setstatus(Integer status) {
+        this.status = status;
     }
 
     @Basic
@@ -64,7 +64,7 @@ public class Buyres implements Serializable {
 
         if (id != null ? !id.equals(buyres.id) : buyres.id != null) return false;
         if (userid != null ? !userid.equals(buyres.userid) : buyres.userid != null) return false;
-        if (staus != null ? !staus.equals(buyres.staus) : buyres.staus != null) return false;
+        if (status != null ? !status.equals(buyres.status) : buyres.status != null) return false;
         if (message != null ? !message.equals(buyres.message) : buyres.message != null) return false;
 
         return true;
@@ -74,7 +74,7 @@ public class Buyres implements Serializable {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (userid != null ? userid.hashCode() : 0);
-        result = 31 * result + (staus != null ? staus.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
         result = 31 * result + (message != null ? message.hashCode() : 0);
         return result;
     }
