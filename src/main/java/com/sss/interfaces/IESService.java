@@ -17,12 +17,13 @@ public interface IESService {
     List<Map<String, Object>> FuzzyQuery(String name, String index, String info, int count);
 
     /**
-     * Query, 最外边的list是and => 里面的list是or 某个字段是否可以匹配某些值
-     * TODO: 应该不会有别的方式了，我先测下这几个
+     * Query, 最外边的list是and => 里面的list是or
+     * 某个字段是否满足任意条件 and 某个字段是否满足任意条件 etc
      * 方式如下:
      * matchQuery: 全文检索
      * fuzzyQuery: 模糊检索
      * rangeQuery: 范围检索(现在只支持数字，完了有需求改一下)
+     *      rangeQuery 值是lt, gt, lte, gte四者之一, 保留字段是那个数字 NOT TESTED
      * termQuery : 输入的查询内容是什么，就会按照什么去查询，并不会解析查询内容，也就是啥也不改就查
      * wildcardQuery: 通配符查询，可以使用'*'或者'?'
      * @param name      表名, 只能是expert, paper, patent 三个之一
