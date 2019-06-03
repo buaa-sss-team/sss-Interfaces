@@ -3,15 +3,15 @@ package com.sss.interfaces.hmodel;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
+
+import static org.hibernate.annotations.GenerationTime.ALWAYS;
 
 @Entity
 @Cache(usage=CacheConcurrencyStrategy.READ_WRITE )
-public class Expert {
+public class Expert implements Serializable {
     private Integer id;
     private Integer hIndex;
     private Integer nCitation;
@@ -28,6 +28,7 @@ public class Expert {
 
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer getId() {
         return id;
     }
@@ -127,6 +128,7 @@ public class Expert {
     }
 
     @Basic
+    @org.hibernate.annotations.Generated(ALWAYS)
     @Column(name = "create_time")
     public Timestamp getCreateTime() {
         return createTime;
@@ -137,6 +139,7 @@ public class Expert {
     }
 
     @Basic
+    @org.hibernate.annotations.Generated(ALWAYS)
     @Column(name = "update_time")
     public Timestamp getUpdateTime() {
         return updateTime;
