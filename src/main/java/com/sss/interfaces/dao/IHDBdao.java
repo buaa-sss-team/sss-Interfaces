@@ -13,6 +13,6 @@ public interface IHDBdao {
     List<Buyres> getBuyresBystatus(int st);
     List<Tradeinfo> getTradeInfoByUserId(int userid);
     User getUserByName(String name);
-
+    List<Action> getActionByUserID(int ID);
 
 }

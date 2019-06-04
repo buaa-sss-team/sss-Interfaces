@@ -29,12 +29,14 @@ public interface CommonService {
      * @return 返回所有关于专家入驻申请且符合条件的数据，请注意有可能是0条
      */
     List<Tobeexpert> checkTobeexpert(int status);
+
     /***
      * 管理员审核资源交易的信息，如专利转让，购买论文什么的
      * @param status 0代表未审核，1代表审核过了的
      * @return 成功返回0，失败返回1
      */
     List<Buyres> checkBuyRes(int status);
+
 
     /***
      * 根据id查找数据库中对应的用户
@@ -79,6 +81,13 @@ public interface CommonService {
     Action getActionInfo(int id);
 
     /**
+     * 根据User id找到对应的tradeinfo
+     * @param id 用户id
+     * @return tradeinfo的list集合，没有结果则为NULL
+     */
+    List<Tradeinfo> getTradeInfo(int id);
+
+    /**
      * 用于用户提交关于申请成为专家的表单或请求的服务
      * @param Tobeexpert
      * @return 成功返回0，失败返回1
@@ -100,7 +109,9 @@ public interface CommonService {
     int addExpert(Expert expert);
 
     /**
-     *
+     * 由于底层关系，传入的必须是hmodel中的对象，例如你要删除id为1的User
+     * 首先实例化一个 User user = new user()
+     * 然后user.setid(1)
      * @param object hmodel中的实例化对象
      * @return 成功返回0，失败返回1,
      */
@@ -128,4 +139,17 @@ public interface CommonService {
      */
     int addTradeInfo(Tradeinfo tradeinfo);
 
+    /**
+     * 获取对应专家id的动态
+     * @param id 对应专家id
+     * @return List类的Action，可能为空
+     */
+    List<Action> getActionByUserId(int id);
+
+    /**
+     * 增加一条动态
+     * @param action action对象
+     * @return 成功返回0，失败返回1
+     */
+    int addAction(Action action);
 }
