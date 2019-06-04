@@ -32,4 +32,11 @@ public interface IESService {
      * @return          所有字段形成的 map
      */
     List<Map<String, Object>> Query(String name, List<Pair<String,List<Pair<String,Pair<String,String>>>>> limits, int count);
+
+    /**
+     * @param name      表名, 只能是expert, paper, patent 三个之一
+     * @param info      一个string
+     * @return          所有字段形成的 map
+     */
+    List<Map<String, Object>> FuzzyQueryString(String name, String info, int count);
 }
