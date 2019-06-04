@@ -18,6 +18,7 @@ public interface CommonService {
      * @return 成功返回0，失败返回1
      */
     int userSignIn(User user);
+
     /***
      * 请注意Tobeexpert Buyres 有一个字段是message，用string表示
      * 实为json字符串，请自行解析
