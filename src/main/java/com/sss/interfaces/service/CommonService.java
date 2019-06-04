@@ -127,6 +127,15 @@ public interface CommonService {
     int update(Object object);
 
     /**
+     * 原来这么简单
+     * 那我还要业务逻辑层干啥
+     * 笑死了
+     * @param object hmodel中的实例化对象
+     * @return 成功返回0，失败返回1
+     */
+    int insert(Object object);
+
+    /**
      * 更新专家info
      * @param expert expert对象
      * @return 成功返回0，失败返回1，失败原因有多种，暂不区分
