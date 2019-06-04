@@ -112,9 +112,18 @@ public interface CommonService {
      * 首先实例化一个 User user = new user()
      * 然后user.setid(1)
      * @param object hmodel中的实例化对象
-     * @return 成功返回0，失败返回1,
+     * @return 成功返回0，失败返回1
      */
     int delete(Object object);
+
+    /**
+     * 由于底层关系，传入的必须是hmodel中的对象，例如你要更新id为1的User
+     * 首先实例化一个 User user = new user()
+     * 然后user.setid(1)
+     * @param object hmodel中的实例化对象
+     * @return 成功返回0，失败返回1
+     */
+    int update(Object object);
 
     /**
      * 更新专家info
