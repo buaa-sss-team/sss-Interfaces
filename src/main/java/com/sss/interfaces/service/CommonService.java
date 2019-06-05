@@ -134,6 +134,14 @@ public interface CommonService {
      * @return 成功返回0，失败返回1
      */
     int insert(Object object);
+    /**
+     * 原来这么简单
+     * 那我还要业务逻辑层干啥
+     * 笑死了
+     * @param paper paper
+     * @return 返回添加的paper的ID
+     */
+    int insertPaper(Paper paper);
 
     /**
      * 更新专家info
