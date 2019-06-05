@@ -15,4 +15,7 @@ public interface IHDBdao {
     User getUserByName(String name);
     List<Action> getActionByUserID(int ID);
 
+    Paper getPaperBySID(int sid);
+
+    int insertPaper(Paper obj);
 }

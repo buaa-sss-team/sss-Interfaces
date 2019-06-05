@@ -7,10 +7,6 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import org.hibernate.annotations.GenerationTime;
-import java.time.*;
-import org.hibernate.annotations.*;
-import org.hibernate.annotations.GenerationTime.*;
 
 import static org.hibernate.annotations.GenerationTime.ALWAYS;
 
@@ -29,7 +25,7 @@ public class Paper implements Serializable {
     private Integer cNumber;
     private String docType;
     private String lang;
-    private String publisher;
+    private String sid;
     private String volume;
     private String issue;
     private String issn;
@@ -162,13 +158,13 @@ public class Paper implements Serializable {
     }
 
     @Basic
-    @Column(name = "publisher")
-    public String getPublisher() {
-        return publisher;
+    @Column(name = "sid")
+    public String getSid() {
+        return sid;
     }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
+    public void setSid(String sid) {
+        this.sid = sid;
     }
 
     @Basic
@@ -282,7 +278,7 @@ public class Paper implements Serializable {
         if (cNumber != null ? !cNumber.equals(paper.cNumber) : paper.cNumber != null) return false;
         if (docType != null ? !docType.equals(paper.docType) : paper.docType != null) return false;
         if (lang != null ? !lang.equals(paper.lang) : paper.lang != null) return false;
-        if (publisher != null ? !publisher.equals(paper.publisher) : paper.publisher != null) return false;
+        if (sid != null ? !sid.equals(paper.sid) : paper.sid != null) return false;
         if (volume != null ? !volume.equals(paper.volume) : paper.volume != null) return false;
         if (issue != null ? !issue.equals(paper.issue) : paper.issue != null) return false;
         if (issn != null ? !issn.equals(paper.issn) : paper.issn != null) return false;
@@ -310,7 +306,7 @@ public class Paper implements Serializable {
         result = 31 * result + (cNumber != null ? cNumber.hashCode() : 0);
         result = 31 * result + (docType != null ? docType.hashCode() : 0);
         result = 31 * result + (lang != null ? lang.hashCode() : 0);
-        result = 31 * result + (publisher != null ? publisher.hashCode() : 0);
+        result = 31 * result + (sid != null ? sid.hashCode() : 0);
         result = 31 * result + (volume != null ? volume.hashCode() : 0);
         result = 31 * result + (issue != null ? issue.hashCode() : 0);
         result = 31 * result + (issn != null ? issn.hashCode() : 0);

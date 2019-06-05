@@ -4,6 +4,7 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -20,7 +21,7 @@ public class Expert implements Serializable {
     private String orgs;
     private String position;
     private String pubid;
-    private String rank;
+    private String aid;
     private String tags;
     private Timestamp createTime;
     private Timestamp updateTime;
@@ -108,13 +109,13 @@ public class Expert implements Serializable {
     }
 
     @Basic
-    @Column(name = "rank")
-    public String getRank() {
-        return rank;
+    @Column(name = "aid")
+    public String getAid() {
+        return aid;
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
+    public void setAid(String aid) {
+        this.aid = aid;
     }
 
     @Basic
@@ -174,7 +175,7 @@ public class Expert implements Serializable {
         if (orgs != null ? !orgs.equals(expert.orgs) : expert.orgs != null) return false;
         if (position != null ? !position.equals(expert.position) : expert.position != null) return false;
         if (pubid != null ? !pubid.equals(expert.pubid) : expert.pubid != null) return false;
-        if (rank != null ? !rank.equals(expert.rank) : expert.rank != null) return false;
+        if (aid != null ? !aid.equals(expert.aid) : expert.aid != null) return false;
         if (tags != null ? !tags.equals(expert.tags) : expert.tags != null) return false;
         if (createTime != null ? !createTime.equals(expert.createTime) : expert.createTime != null) return false;
         if (updateTime != null ? !updateTime.equals(expert.updateTime) : expert.updateTime != null) return false;
@@ -193,7 +194,7 @@ public class Expert implements Serializable {
         result = 31 * result + (orgs != null ? orgs.hashCode() : 0);
         result = 31 * result + (position != null ? position.hashCode() : 0);
         result = 31 * result + (pubid != null ? pubid.hashCode() : 0);
-        result = 31 * result + (rank != null ? rank.hashCode() : 0);
+        result = 31 * result + (aid != null ? aid.hashCode() : 0);
         result = 31 * result + (tags != null ? tags.hashCode() : 0);
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
