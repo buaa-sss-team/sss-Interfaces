@@ -10,7 +10,7 @@
 
     <properties>
         <hibernateVersion>3.6.3.Final</hibernateVersion>
-        <springframework.version>4.1.6.RELEASE</springframework.version>
+        <springframework.version>6.0.0</springframework.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
